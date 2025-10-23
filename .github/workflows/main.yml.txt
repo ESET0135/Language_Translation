@@ -51,4 +51,6 @@ jobs:
 
       - name: Run tests
         run: |
+          # Add repo root to PYTHONPATH so tests can import modules from root
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest -v
